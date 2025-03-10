@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ewomail.infrastructure.mapper.UserMapper">
+    <insert id="batchInsertUsers" parameterType="java.util.List">
+        INSERT INTO i_users (
+        id,domain_id, password, email, maildir,
+        uname, tel, active, limits,
+        limitg, ctime
+        ) VALUES
+        <foreach collection="userList" item="item" separator=",">
+            (
+            #{item.id},#{item.domainId}, #{item.password}, #{item.email}, #{item.maildir},
+            #{item.uname}, #{item.tel}, #{item.active}, #{item.limits},
+            #{item.limitg}, #{item.ctime}
+            )
+        </foreach>
+    </insert>
+</mapper> 

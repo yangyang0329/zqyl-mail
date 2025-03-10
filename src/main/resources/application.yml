@@ -1,0 +1,31 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/ewomail?useSSL=false&serverTimezone=UTC
+    username: ewomail
+    password: Wxm5RXlMqHmMFgZ0
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+mail:
+  smtp:
+    host: smtp.cnyunlian.com
+    port: 25
+    username: test@cnyunlian.com
+    password: test1234
+    auth: true
+    starttls: true
+
+  imap:
+    host: imap.cnyunlian.com
+    port: 993
+    username: test@cnyunlian.com
+    password: test1234
+    ssl: true
+
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.ewomail.domain.entity
+
+
